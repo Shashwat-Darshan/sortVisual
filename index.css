@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    box-shadow: 4px 5px px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+/* Controls Section */
+.controls {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.controls label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.controls select,
+.controls input[type="range"],
+.controls button {
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #6200ea;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.controls select:focus,
+.controls input[type="range"]:focus,
+.controls button:focus {
+    border-color: #3700b3;
+    outline: none;
+}
+
+.controls select,
+.controls button {
+    cursor: pointer;
+}
+
+.controls button {
+    background-color: #6200ea;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #3700b3;
+}
+
+/* Visualizer Section */
+.visualizer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 400px;
+    width: 80%;
+    border: 1px solid #6200ea;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#barsContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Bars Styling */
+.bar {
+    margin: 0 2px;
+    background: #6200ea;
+    transition: height 0.3s, background 0.3s;
+    width: 10px;
+    border-radius: 3px;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background: #6200ea;
+    color: white;
+    width: 100%;
+    font-size: 14px;
+}
+/* Scroll Down Button */
+.scroll_down {
+    position: fixed;
+    left: 50%;
+    bottom: 10%; /* 10% from the bottom of the page */
+    transform: translateX(-50%);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.scroll_down:hover {
+    background-color: #2563eb;
+}
+
+.container {
+    padding-bottom: 100px;
+}

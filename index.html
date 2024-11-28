@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <!-- Assuming this is the script with sorting logic -->
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <!-- Header Section -->
+    <div class="container mx-auto p-4">
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-4xl font-bold font-mono ">SortMaster</h1>
+            <nav class="space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">Sorting Techniques</a>
+                <a href="#" class="text-gray-400 hover:text-white">Sorting Transitions</a>
+                <a href="#" class="text-gray-400 hover:text-white">Settings</a>
+            </nav>
+        </header>
+        <div class="flex justify-center pb-40">
+            <img src="./image.png" alt="Description" class="border-4 border-gray-800 rounded-2xl">
+        </div>
+        <!-- Main Content Section with Sorting Algorithms -->
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Bubble Sort</h2>
+                <p class="text-gray-400 mb-4">Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Quick Sort</h2>
+                <p class="text-gray-400 mb-4">Quick Sort is an efficient sorting algorithm that uses a divide-and-conquer strategy to sort elements by partitioning an array into two halves.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Merge Sort</h2>
+                <p class="text-gray-400 mb-4">Merge Sort is a divide-and-conquer algorithm that divides the array into halves, sorts them, and then merges the sorted halves.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Insertion Sort</h2>
+                <p class="text-gray-400 mb-4">Insertion Sort builds the final sorted array one item at a time by repeatedly picking the next element and inserting it at the correct position.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Selection Sort</h2>
+                <p class="text-gray-400 mb-4">Selection Sort is an in-place comparison sorting algorithm that divides the input list into two parts: a sorted sublist and an unsorted sublist.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Heap Sort</h2>
+                <p class="text-gray-400 mb-4">Heap Sort is a comparison-based sorting algorithm that leverages a binary heap data structure to sort elements.</p>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Scroll Down Button -->
+    <div class="flex justify-center mt-8 scroll_down">
+        <button id="scrollDownBtn" class="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-400 transition duration-300">
+            Scroll Down ⬇️
+        </button>
+    </div>
+
+    <!-- Sorting Algorithm Visualizer Section -->
+    <section id="visualizerSection">
+        <h1 class="text-3xl font-extrabold text-center mb-6">Sorting Algorithm Visualizer</h1>
+        <div id="scroll_down"></div>
+    </section>
+
+    <!-- Controls Section -->
+    <section class="controls">
+        <div class="control-group">
+            <label for="algorithm">Choose Algorithm:</label>
+            <select id="algorithm">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="quick">Quick Sort</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="arraySize">Array Size:</label>
+            <input type="range" id="arraySize" min="5" max="50" value="20">
+        </div>
+
+        <div class="control-group">
+            <label for="speedSlider">Speed:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="10">
+        </div>
+
+        <div class="control-group">
+            <button id="generateArray">Generate New Array</button>
+            <button id="startSorting">Start Sorting</button>
+            <button id="stopSorting">Stop Sorting</button>
+        </div>
+    </section>
+
+    <!-- Visualizer Section -->
+    <section class="visualizer">
+        <div id="barsContainer"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Made with ❤️ by Shashwat Darshan</p>
+    </footer>
+
+    <script src="./index.js" defer></script>
+    <script>
+        // Scroll to the visualizer section
+        document.getElementById('scrollDownBtn').addEventListener('click', function() {
+            document.getElementById('visualizerSection').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Show/Hide the scroll down button based on scroll position
+        window.addEventListener('scroll', function() {
+            const scrollDownBtn = document.getElementById('scrollDownBtn');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // If the user is at the bottom of the page, hide the button
+            if (scrollPosition >= documentHeight - 10) {
+                scrollDownBtn.style.display = 'none';
+            } else {
+                scrollDownBtn.style.display = 'block';
+            }
+        });
+    </script>
+
+    
+
+</body>
+
+</html>
