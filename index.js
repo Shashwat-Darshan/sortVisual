@@ -13,7 +13,8 @@ let isSorting = false;  // Flag to control sorting process
 
 // Generate Array
 function generateArray() {
-    const size = Math.max(40, arraySize.value); // Ensure minimum size is 40
+    const size =  arraySize.value;
+    console.log(size);// Ensure minimum size is 40
     array = Array.from({ length: size }, () => Math.floor(Math.random() * 19) - 9); // Numbers between -9 and 9
     renderArray();
 }
@@ -21,6 +22,7 @@ function generateArray() {
 // Render Bars with Values
 // Generate Array with Color Representation
 function renderArray() {
+    
     barsContainer.innerHTML = ""; // Clear previous bars and values
     array.forEach((value, index) => {
         // Create Bar Element
